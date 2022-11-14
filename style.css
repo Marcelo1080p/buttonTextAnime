@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #132126;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    position: relative;
+    width: 250px;
+    height: 60px;
+    background-color: transparent;
+    cursor: pointer;
+    border-color: #00C1C2;
+    transition: all .5s;
+}
+
+button:hover {
+    scale: 1.1;
+    letter-spacing: .3rem;
+}
+
+
+button::before {
+    content: "";
+    position: absolute;
+    top: -8%;
+    left: 80%;
+    border: 1px solid #E75590;
+    height: 5px;
+    width: 5px;
+    transition: all .5s;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    bottom: -8%;
+    left: 20%;
+    border: 1px solid #E75590;
+    height: 5px;
+    width: 5px;
+    transition: all .5s;
+}
+
+button:hover::before {
+   left: 20%;
+   scale: 1.4;
+}
+button:hover::after {
+    left: 80%;
+    scale: 1.4;
+}
+
+button a {
+    background-size: 300% 300%;
+    background-image: linear-gradient(#E75590, #00C1C2);
+    animation: anime 3s infinite alternate;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: transparent;
+}
+
+
+@keyframes anime {
+    from {
+        background-position: 0 50%;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
